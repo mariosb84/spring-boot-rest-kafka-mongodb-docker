@@ -2,21 +2,15 @@ package testingMyProjects;
 
 /* СОБЕСЕДОВАНИЕ - ЗАДАЧА - НАЙТИ ПЕРВОЕ ПОВТОРЯЮЩЕЕСЯ ЧИСЛО В МАССИВЕ */
 
+import java.util.*;
+
 public class DuplicatesArray {
 
     public static void main(String[] args) {
-       int result = 0;
-       int[] arr = new int[]{4, 5, 1, 4, 8, 9, 10};
-
-       for (int i = 0;i < arr.length - 1;i++) {
-           int j = arr[i + 1];
-           if(j == arr[i]) {
-               result = j;
-               break;
-           }
-           i++;
-       }
-        System.out.println("Первое повторяющееся число : " + result);
+       int[] arr = new int[]{4, 5, 1, 4, 7, 8, 9, 10, 8, 10};
+       Set<Integer> set = new HashSet<>();
+        System.out.println("Первый дубликат в массиве : "
+                + (Arrays.stream(arr).boxed().filter(i -> !set.add(i)).findFirst()).get());
     }
 
 }

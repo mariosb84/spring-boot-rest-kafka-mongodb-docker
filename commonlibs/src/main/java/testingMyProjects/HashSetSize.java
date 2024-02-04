@@ -19,13 +19,21 @@ public class HashSetSize {
         Person nina = new Person("Nina");
         Person masha1 = new Person("Masha");
 
-        HashSet<Person> personHashSet = new HashSet<>();
-        personHashSet.add(masha);
-        personHashSet.add(nina);
-        personHashSet.add(ira);
-        personHashSet.add(masha1);
+        HashSet<String> personHashSet = new HashSet<>();
+        personHashSet.add(masha.name);
+        personHashSet.add(nina.name);
+        personHashSet.add(ira.name);
+        personHashSet.add(masha1.name);
+
+        HashSet<Person> personHashSet2 = new HashSet<>();
+        personHashSet2.add(masha);
+        personHashSet2.add(nina);
+        personHashSet2.add(ira);
+        personHashSet2.add(masha1);
 
         System.out.println(personHashSet.size());
+        System.out.println(personHashSet2.size());
+        System.out.println(personHashSet2.stream().findAny().get().name);
 
 
     }
